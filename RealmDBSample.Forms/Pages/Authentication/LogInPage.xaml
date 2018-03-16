@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RealmDBSample.Forms.Pages.Authentication.LogInPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="20">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Entry
+                Text="{Binding Username, Mode=TwoWay}"
+                Placeholder="Username"
+                HorizontalOptions="FillAndExpand" />
+            <Entry
+                Text="{Binding Password, Mode=TwoWay}"
+                IsPassword="True"
+                Placeholder="Password"
+                HorizontalOptions="FillAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Create a new user"
+                    VerticalTextAlignment="Center" />
+                <Switch IsToggled="{Binding CreateNewUser, Mode=TwoWay}" />
+            </StackLayout>
+            <Button
+                Text="Log in"
+                Command="{Binding LogInCommand}"
+                HorizontalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseSyncPage
+    x:Class="RealmDBSample.Forms.Pages.Store.StoreListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:RealmDBSample.Forms.Pages.Base;assembly=RealmDBSample.Forms">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Log Out"
+            Command="{Binding LogOutCommand}" />
+    </ContentPage.ToolbarItems>
+    <ListView
+        x:Name="ListView"
+        ItemsSource="{Binding Items}"
+        ItemSelected="ListView_OnItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding CompanyName}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</base:BaseSyncPage>
